@@ -10,7 +10,7 @@ type ArticleWrapperProps = {
 
 export default function ArticleWrapper({ className, posts }: ArticleWrapperProps) {
   return (
-    <section className={cn(`grid grid-cols-3 h-card gap-5 justify-center items-center`, className)}>
+    <section className={cn(`grid grid-cols-3 gap-5 justify-center items-center`, className)}>
       {posts.map((post) => (
         <ArticleCard post={post} key={post.id} className="h-card">
           <ArticleTitle>{post.title}</ArticleTitle>

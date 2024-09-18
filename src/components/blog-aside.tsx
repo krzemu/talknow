@@ -1,20 +1,20 @@
-import { cn, getPosts } from "@/lib/utils";
+import { capitalize, cn, getPosts } from "@/lib/utils";
 import Link from "next/link";
 import React from "react";
 import ArticleListItem from "./article-list-item";
 
-const tags = [
-  { name: "React", slug: "react" },
-  { name: "Next.js", slug: "nextjs" },
-  { name: "Tailwind CSS", slug: "tailwindcss" },
-  { name: "Health", slug: "health" },
-  { name: "Fitness", slug: "fitness" },
-  { name: "Nutrition", slug: "nutrition" },
-  { name: "Car serivce", slug: "car-service" },
-  { name: "Electric cards", slug: "electric-cards" },
-];
+// const tags = [
+//   { name: "React", slug: "react" },
+//   { name: "Next.js", slug: "nextjs" },
+//   { name: "Tailwind CSS", slug: "tailwindcss" },
+//   { name: "Health", slug: "health" },
+//   { name: "Fitness", slug: "fitness" },
+//   { name: "Nutrition", slug: "nutrition" },
+//   { name: "Car serivce", slug: "car-service" },
+//   { name: "Electric cards", slug: "electric-cards" },
+// ];
 
-export default async function BlogAside() {
+export default async function BlogAside({ tags }: { tags: string[] }) {
   const recentArticles = await getPosts({ take: 3 });
 
   return (
@@ -22,17 +22,20 @@ export default async function BlogAside() {
       <Section>
         <h4 className="text-2xl">Tags</h4>
         <ul className="flex gap-4 flex-wrap ">
-          {tags.map((tag) => (
-            <li
-              key={tag.slug}
-              className="group px-4 py-2 rounded-full border  border-white/10 transition hover:border-white/30">
-              <Link
-                href={`/tags/${tag.slug}`}
-                className="text-gray-50/80 group-hover:text-gray-50 transition">
-                {tag.name}
-              </Link>
-            </li>
-          ))}
+          {tags.map((tag) => {
+            const tagSlug = tag.toLowerCase().replace(/\s/g, "-");
+            return (
+              <li
+                key={tagSlug}
+                className="group px-4 py-2 rounded-full border  border-white/10 transition hover:border-white/30">
+                <Link
+                  href={`/tags/${tagSlug}`}
+                  className="text-gray-50/80 group-hover:text-gray-50 transition">
+                  {capitalize(tag)}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </Section>
       <Section>

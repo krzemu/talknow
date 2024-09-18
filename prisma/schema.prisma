@@ -18,6 +18,8 @@ model posts {
   teaser         String
   content        String
   category       String
+  tags           String
   published_date DateTime @default(now())
-  published      Boolean  @default(false)
+  update_date    DateTime @default(now())
+  published      Boolean  @default(true)
 }

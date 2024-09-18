@@ -1,5 +1,5 @@
 import React from "react";
-import { getPostBySlug, getPosts, sleep } from "../../../lib/utils";
+import { getPostBySlug, getPosts } from "../../../lib/utils";
 import { notFound } from "next/navigation";
 import { Wrapper, WrapperBox } from "../../../components/wrapper";
 import Main from "../../../components/main";
@@ -64,7 +64,7 @@ export default async function Page({ params }: PageProps) {
           dangerouslySetInnerHTML={safeContent}
           className="text-gray-50/90 mt-5 post_content col-span-2 px-5"
         />
-        <BlogAside />
+        <BlogAside tags={post.tags.split(", ")} />
         <div className="border-t col-span-2 pt-3 border-gray-50/10 flex items-center justify-between">
           <p className="text-sm text-gray-50/50 ">
             Published on {new Date(post.published_date).toLocaleDateString()}

@@ -21,8 +21,8 @@ export function generateMetadata({ params }: TagPageProps): Metadata {
 }
 
 export default async function TagsPage({ params }: TagPageProps) {
-  const searchQuery = params.slug;
-
+  const searchQuery = params.slug.replace(/-/g, " ");
+  console.log(searchQuery);
   const posts = await getPosts({ tagSlug: searchQuery });
 
   if (posts.length === 0) {
@@ -30,7 +30,7 @@ export default async function TagsPage({ params }: TagPageProps) {
   }
 
   return (
-    <Main>
+    <Main className="h-auto">
       <WrapperBox className="mt-5">
         <h1 className="text-2xl lg:text-3xl mb-5 xl:text-4xl capitalize">
           {searchQuery === "all" ? "All Posts" : `${capitalize(searchQuery)} Tag Archive Page`}

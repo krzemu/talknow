@@ -11,7 +11,7 @@ export default function Main({
   return (
     <main
       className={cn(
-        `container w-full 2xl:max-w-[1320px] mx-auto py-5 bg-gray-50/[2%] flex-1`,
+        `container w-full 2xl:max-w-[1320px] mx-auto py-5 bg-gray-50/[2%] flex-1 h-full`,
         className
       )}>
       {children}

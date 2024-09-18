@@ -18,11 +18,11 @@ type getPostsProps = {
 
 export async function getPosts({ category, tagSlug, take, skip }: getPostsProps = {}): Promise<posts[]> {
     let users;
-    if (category) {
+    if (category || tagSlug) {
         users = await prisma.posts.findMany({
             where: {
-                category: capitalize(category),
-                tags: tagSlug
+                category: category ? capitalize(category) : undefined,
+                tags: tagSlug ? { contains: tagSlug } : undefined
             },
             take: take || 8,
             skip: skip || 0
