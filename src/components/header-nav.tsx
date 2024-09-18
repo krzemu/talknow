@@ -66,7 +66,7 @@ function DesktopNav({ activePath, className }: { activePath: string; className?:
 
 const variants = {
   open: { x: 0, scale: 1, display: "block" },
-  closed: { x: "100%", scale: 0.6, display: "none" },
+  closed: { x: "100%", scale: 0.55, display: "none" },
 };
 
 function MobileNav({ className }: { className?: string }) {
