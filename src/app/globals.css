@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 .container {
   @apply mx-auto w-full max-w-[1050px] 2xl:max-w-[1300px];
 }

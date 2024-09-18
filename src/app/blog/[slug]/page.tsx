@@ -57,15 +57,15 @@ export default async function Page({ params }: PageProps) {
         </section>
         <div className="bg-gradient-to-b from-gray-950/0 to-gray-950/80 absolute inset-0 m-auto w-full h-full z-10"></div>
       </Wrapper>
-      <WrapperBox className="mt-8 grid grid-cols-3">
-        <p className="text-xl text-gray-50/80 mb-5 px-5 col-span-3">{post.teaser}</p>
+      <WrapperBox className="mt-8 grid lg:grid-cols-3 grid-cols-1">
+        <p className="text-xl text-gray-50/80 mb-5 px-5 lg:col-span-3">{post.teaser}</p>
 
         <div
           dangerouslySetInnerHTML={safeContent}
-          className="text-gray-50/90 mt-5 post_content col-span-2 px-5"
+          className="text-gray-50/90 mt-5 text-md lg:text-base post_content col-span-2 px-5"
         />
         <BlogAside tags={post.tags.split(", ")} />
-        <div className="border-t col-span-2 pt-3 border-gray-50/10 flex items-center justify-between">
+        <div className="border-t col-span-2 pt-3 border-gray-50/10 flex flex-col lg:flex-row gap-y-5 items-center justify-between">
           <p className="text-sm text-gray-50/50 ">
             Published on {new Date(post.published_date).toLocaleDateString()}
           </p>
@@ -84,7 +84,7 @@ export default async function Page({ params }: PageProps) {
         <h2 className="text-2xl">Related Posts</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {filteredRelatedPost.map((post) => (
-            <ArticleCard className="h-card" key={post.id} post={post}>
+            <ArticleCard className="lg:h-card h-smallCard" key={post.id} post={post}>
               <ArticleTitle className="text-xl lg:text-2xl">{post.title}</ArticleTitle>
             </ArticleCard>
           ))}

@@ -8,12 +8,12 @@ type WrapperBoxProps = {
 
 export function WrapperBox({ children, className }: WrapperBoxProps) {
   return (
-    <section className={cn(`relative px-5 lg:px-10 flex flex-col gap-5`, className)}>
+    <section className={cn(`relative w-full px-5 lg:px-10 flex flex-col gap-5`, className)}>
       {children}
     </section>
   );
 }
 
 export function Wrapper({ children, className }: WrapperBoxProps) {
-  return <div className={cn(`relative flex flex-col gap-10`, className)}>{children}</div>;
+  return <div className={cn(`relative w-full flex flex-col gap-10`, className)}>{children}</div>;
 }

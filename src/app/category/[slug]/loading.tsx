@@ -12,9 +12,6 @@ export default function Loading() {
           <LoadingSkeleton className="w-full h-card" />
           <LoadingSkeleton className="w-full h-card" />
           <LoadingSkeleton className="w-full h-card" />
-          <LoadingSkeleton className="w-full h-card" />
-          <LoadingSkeleton className="w-full h-card" />
-          <LoadingSkeleton className="w-full h-card" />
         </div>
       </WrapperBox>
     </Main>

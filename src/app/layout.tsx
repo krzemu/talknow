@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`antialiased bg-gray-950 text-gray-50 min-h-screen text-base flex flex-col overflow-y-scroll`}>
+        className={`overflow-x-hidden w-full bg-gray-950 text-gray-50 min-h-screen flex flex-col overflow-y-scroll`}>
         <Header />
         {children}
         <Footer />

@@ -18,7 +18,7 @@ export default async function BlogAside({ tags }: { tags: string[] }) {
   const recentArticles = await getPosts({ take: 3 });
 
   return (
-    <aside className="border-l border-white/5 pl-10 pt-5">
+    <aside className="lg:border-l border-white/5 lg:pl-10 px-5 pt-5">
       <Section>
         <h4 className="text-2xl">Tags</h4>
         <ul className="flex gap-4 flex-wrap ">

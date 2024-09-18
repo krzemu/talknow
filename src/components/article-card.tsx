@@ -27,7 +27,7 @@ export default function ArticleCard({ className, children, post }: ArticleCardPr
       )}>
       <article>
         {children}
-        <div className="bg-gradient-to-b from-gray-950/0 to-gray-950 w-full h-full absolute inset-0 m-auto -z-10 "></div>
+        <div className="bg-gradient-to-b from-gray-950/0 via-gray-950/70 lg:via-gray-950/50 to-gray-950 w-full h-full absolute inset-0 m-auto -z-10 "></div>
         {true && (
           <Image
             src={post.featured_image}

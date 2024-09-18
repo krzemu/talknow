@@ -11,6 +11,7 @@ const config: Config = {
       height: {
         "showcase": '476px',
         "card": '300px',
+        "smallCard": '200px',
       }
     },
   },
