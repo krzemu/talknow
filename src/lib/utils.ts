@@ -8,9 +8,6 @@ export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
 
 export const capitalize = (str: string) => str.charAt(0).toUpperCase() + str.slice(1);
 
-export const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-
-
 
 type getPostsProps = {
     category?: string | undefined;
