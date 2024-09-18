@@ -48,7 +48,7 @@ export default async function Page({ params }: PageProps) {
           alt={post.featured_image}
           className="w-full h-[428px] object-cover"
         />
-        <section className="flex flex-col absolute bottom-5 left-5 px-10">
+        <section className="flex flex-col absolute bottom-5 left-5 px-5 lg:px-10">
           <div className="flex relative z-20 items-center gap-1 text-gray-50/80 mb-1 pb-2 after:w-full after:h-[1px] after:bottom-0 after:inset-x-0 after:mx-auto after:bg-gradient-to-r from-gray-50/30 via-gray-50/10 to-gray-50/0 after:absolute">
             <CalendarIcon />
             {new Date(post.published_date).toLocaleDateString()}
