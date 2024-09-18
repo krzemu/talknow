@@ -8,10 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
+      height: {
+        "showcase": '476px',
+        "card": '300px',
+      }
     },
   },
   plugins: [],
